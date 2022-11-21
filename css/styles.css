@@ -92,12 +92,26 @@ ul {
   margin-left: 46px;
 }
 .menu li a {
+  position: relative;
   text-decoration: none;
   color: #212121;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu li a:hover {
   color: #2196f3;
+}
+.menu > li > a:hover::after {
+  position: absolute;
+  content: "";
+  background-image: url(../images/hover.svg);
+  background-size: contain;
+  width: 53px;
+  height: 4px;
+  top: 45px;
+  left: 0px;
 }
 .flex-address {
   display: flex;
@@ -118,7 +132,13 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition-property: color;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .info .li {
   list-style-type: none;
 }
@@ -127,6 +147,10 @@ ul {
   align-items: center;
   justify-content: center;
   margin-right: 30px;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .info .list-info-a:hover a {
@@ -211,7 +235,13 @@ h3 {
   cursor: pointer;
   padding: 6px 22px;
 }
-
+button {
+  transition-property: color;
+  transition-property: background-color;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 button:hover {
   color: white;
   background-color: #2196f3;
@@ -349,9 +379,42 @@ button:hover {
   padding-bottom: 20px;
 }
 
-.frame:hover {
+.list-frame {
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.list-frame:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+.frame-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2196f3;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  transform: translateY(140%);
+  transition: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.list-frame:hover .frame-text {
+  transform: translateY(0%);
+}
+
+.terrible-text {
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  padding: 49px;
 }
 
 .primar-text {
@@ -482,8 +545,26 @@ button:hover {
   gap: 30px;
 }
 .primary-images li {
+  position: relative;
   list-style-type: none;
   height: 294px;
+  background-color: rgba (47, 48, 58, 0.8);
+  background-position: bottom;
+}
+.primary-images-img-text {
+  display: block;
+  width: 370px;
+  height: 70px;
+  padding: 29px 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.17;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
 }
 
 .John-Doe {
@@ -622,6 +703,9 @@ button:hover {
   border-radius: 50%;
   text-decoration: none;
   margin-top: 16px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover {
@@ -663,11 +747,14 @@ button:hover {
   margin-top: 50px;
   width: 170px;
   height: 92px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .clients-link:hover {
+/* /* .clients-link:hover {
   border: 1px solid #2196f3;
-} */
+/* } */
 .yaco,
 .tagline-here,
 .company,
@@ -676,30 +763,12 @@ button:hover {
 .tagline {
   fill: #afb1b8;
 }
-.list-of-clients > li > a:hover {
+.list-of-clients > li > .clients-link:hover {
   border: 1px solid #2196f3;
 }
-.list-of-clients > li > a:hover use {
+.list-of-clients > li > .clients-link:hover use {
   fill: #2196f3;
 }
-/* .yaco:hover {
-  fill: #2196f3;
-}
-.tagline-here:hover {
-  fill: #2196f3;
-}
-.company:hover {
-  fill: #2196f3;
-}
-.foster:hover {
-  fill: #2196f3;
-}
-.brand:hover {
-  fill: #2196f3;
-}
-.tagline:hover {
-  fill: #2196f3;
-} */
 
 .join-us {
   display: flex;
@@ -741,6 +810,9 @@ button:hover {
   height: 44px;
   border-radius: 50%;
   text-decoration: none;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-footer:hover {
